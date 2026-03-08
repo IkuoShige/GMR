@@ -5,16 +5,16 @@
 <robot
   name="K1">
 
-  <!--mujoco>
+  <!-- <mujoco>
     <compiler meshdir="meshes/" balanceinertia="true" discardvisual="false"/>
-  </mujoco-->
+  </mujoco> -->
   <!-- for convert to mujoco -->
-  <!--link name="world"/>
+  <!-- <link name="world"/>
   <joint name="world_joint" type="floating">
     <origin xyz="0 0 0"/>
     <parent link="world"/>
     <child link="Trunk"/>
-  </joint-->
+  </joint> -->
 
   <link
     name="Trunk">
@@ -23,7 +23,7 @@
         xyz="-0.0043392 -0.00065534 0.065686"
         rpy="0 0 0" />
       <mass
-        value="6.3921" />
+        value="6.50" />
       <inertia
         ixx="0.096159"
         ixy="-0.000039"
@@ -46,6 +46,20 @@
           rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/K1logo.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>      
     <collision>
       <origin
         xyz="0 0 0.1"
@@ -70,7 +84,7 @@
         xyz="-0.00069503 -0.00038527 0.031688"
         rpy="0 0 0" />
       <mass
-        value="0.29729" />
+        value="0.30" />
       <inertia
         ixx="0.000429"
         ixy="-0.000002"
@@ -118,7 +132,7 @@
     <limit
       lower="-1."
       upper="1."
-      effort="7"
+      effort="6"
       velocity="18"
     />
   </joint>
@@ -129,7 +143,7 @@
         xyz="0.011042 -0.00092871 0.080698"
         rpy="0 0 0" />
       <mass
-        value="0.61387" />
+        value="0.70" />
       <inertia
         ixx="0.005927"
         ixy="-0.000012"
@@ -177,7 +191,7 @@
     <limit
       lower="-0.349"
       upper="0.855"
-      effort="7"
+      effort="6"
       velocity="18"
     />
   </joint>
@@ -188,7 +202,7 @@
         xyz="-0.002701 0.062383 -0.011965"
         rpy="0 0 0" />
       <mass
-        value="0.45628" />
+        value="0.50" />
       <inertia
         ixx="0.002194"
         ixy="-0.000084"
@@ -227,7 +241,7 @@
     <limit
       lower="-3.316"
       upper="1.22"
-      effort="10"
+      effort="14"
       velocity="18"
     />
   </joint>
@@ -238,7 +252,7 @@
         xyz="0.01729 0.018221 -4.329E-05"
         rpy="0 0 0" />
       <mass
-        value="0.084303" />
+        value="0.09" />
       <inertia
         ixx="0.000092"
         ixy="0.000009"
@@ -285,7 +299,7 @@
     <limit
       lower="-1.74"
       upper="1.57"
-      effort="10"
+      effort="14"
       velocity="18"
     />
   </joint>
@@ -296,7 +310,7 @@
         xyz="-0.0003979 0.072617 -0.00066218"
         rpy="0 0 0" />
       <mass
-        value="0.76208" />
+        value="0.80" />
       <inertia
         ixx="0.006069"
         ixy="-0.000017"
@@ -344,7 +358,7 @@
     <limit
       lower="-2.27"
       upper="2.27"
-      effort="10"
+      effort="14"
       velocity="18"
     />
   </joint>
@@ -355,7 +369,7 @@
         xyz="-0.0015751 0.084637 0.0087033"
         rpy="0 0 0" />
       <mass
-        value="0.16796" />
+        value="0.19" />
       <inertia
         ixx="0.002056"
         ixy="-0.000007"
@@ -403,61 +417,9 @@
     <limit
       lower="-2.44"
       upper="0"
-      effort="10"
+      effort="14"
       velocity="18"
     />
-  </joint>
-
-  <link
-    name="left_hand_end_ball">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0.002" />
-      <inertia
-        ixx="1.0e-5"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="1.0e-5"
-        iyz="0.0"
-        izz="1.0e-5" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <sphere radius="0.025" />
-      </geometry>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <sphere radius="0.025" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="Left_Hand_End_Ball"
-    type="fixed">
-    <origin
-      xyz="0 0.203 0"
-      rpy="0 0 0" />
-    <parent
-      link="left_hand_link" />
-    <child
-      link="left_hand_end_ball" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-3.14"
-      upper="3.14"
-      effort="0.1"
-      velocity="0.1" />
   </joint>
 
   <link
@@ -467,7 +429,7 @@
         xyz="-0.0026302 -0.06251 -0.01199"
         rpy="0 0 0" />
       <mass
-        value="0.45669" />
+        value="0.50" />
       <inertia
         ixx="0.002200"
         ixy="0.000082"
@@ -506,7 +468,7 @@
     <limit
       lower="-3.316"
       upper="1.22"
-      effort="10"
+      effort="14"
       velocity="18"
     />
   </joint>
@@ -517,7 +479,7 @@
         xyz="0.017229 -0.018428 4.3784E-05"
         rpy="0 0 0" />
       <mass
-        value="0.083353" />
+        value="0.09" />
       <inertia
         ixx="0.000092"
         ixy="-0.000009"
@@ -564,7 +526,7 @@
     <limit
       lower="-1.57"
       upper="1.74"
-      effort="10"
+      effort="14"
       velocity="18"
     />
   </joint>
@@ -575,7 +537,7 @@
         xyz="-0.00039919 -0.072601 -0.00065629"
         rpy="0 0 0" />
       <mass
-        value="0.76234" />
+        value="0.80" />
       <inertia
         ixx="0.006070"
         ixy="0.000017"
@@ -623,7 +585,7 @@
     <limit
       lower="-2.27"
       upper="2.27"
-      effort="10"
+      effort="14"
       velocity="18"
     />
   </joint>
@@ -634,7 +596,7 @@
         xyz="-0.0015177 -0.084536 0.0086733"
         rpy="0 0 0" />
       <mass
-        value="0.16828" />
+        value="0.19" />
       <inertia
         ixx="0.002056"
         ixy="0.000005"
@@ -682,61 +644,9 @@
     <limit
       lower="0"
       upper="2.44"
-      effort="10"
+      effort="14"
       velocity="18"
     />
-  </joint>
-
-  <link
-    name="right_hand_end_ball">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0.002" />
-      <inertia
-        ixx="1.0e-5"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="1.0e-5"
-        iyz="0.0"
-        izz="1.0e-5" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <sphere radius="0.025" />
-      </geometry>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <sphere radius="0.025" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="Right_Hand_End_Ball"
-    type="fixed">
-    <origin
-      xyz="0 -0.203 0"
-      rpy="0 0 0" />
-    <parent
-      link="right_hand_link" />
-    <child
-      link="right_hand_end_ball" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-3.14"
-      upper="3.14"
-      effort="0.1"
-      velocity="0.1" />
   </joint>
 
   <link
@@ -746,7 +656,7 @@
         xyz="-0.010093 -0.0019934 -0.024713"
         rpy="0 0 0" />
       <mass
-        value="0.64068" />
+        value="0.69" />
       <inertia
         ixx="0.000781"
         ixy="0.000004"
@@ -774,7 +684,7 @@
     name="Left_Hip_Pitch"
     type="revolute">
     <origin
-      xyz="0 0.096 -0.062"
+      xyz="0 0.096 -0.077"
       rpy="0 0 0" />
     <parent
       link="Trunk" />
@@ -785,8 +695,8 @@
     <limit
       lower="-3.0"
       upper="2.21"
-      effort="45"
-      velocity="18"
+      effort="30"
+      velocity="7.1"
     />
   </joint>
   <link
@@ -796,7 +706,7 @@
         xyz="0.023585 0.000049 -0.024996"
         rpy="0 0 0" />
       <mass
-        value="0.127825" />
+        value="0.13" />
       <inertia
         ixx="0.000191"
         ixy="0.000000"
@@ -843,8 +753,8 @@
     <limit
       lower="-0.4"
       upper="1.57"
-      effort="30"
-      velocity="18"
+      effort="35"
+      velocity="12.9"
     />
   </joint>
   <link
@@ -854,7 +764,7 @@
         xyz="-0.0084744 -0.0040494 -0.087906"
         rpy="0 0 0" />
       <mass
-        value="1.5591" />
+        value="1.65" />
       <inertia
         ixx="0.015786"
         ixy="0.000096"
@@ -901,8 +811,8 @@
     <limit
       lower="-1."
       upper="1."
-      effort="30"
-      velocity="18"
+      effort="20"
+      velocity="18.1"
     />
   </joint>
   <link
@@ -912,7 +822,7 @@
         xyz="-0.00081083 0.0031459 -0.10922"
         rpy="0 0 0" />
       <mass
-        value="1.483334" />
+        value="1.50" />
       <inertia
         ixx="0.023681"
         ixy="0.000035"
@@ -967,8 +877,8 @@
     <limit
       lower="0."
       upper="2.23"
-      effort="45"
-      velocity="18"
+      effort="40"
+      velocity="12.5"
     />
   </joint>
   <link
@@ -978,7 +888,7 @@
         xyz="0.000000 0.000000 0.000000"
         rpy="0 0 0" />
       <mass
-        value="0.038836" />
+        value="0.039" />
       <inertia
         ixx="0.000002"
         ixy="0.000000"
@@ -1018,24 +928,24 @@
       lower="-0.87"
       upper="0.345"
       effort="20"
-      velocity="18"
+      velocity="18.1"
     />
   </joint>
   <link
     name="left_foot_link">
     <inertial>
       <origin
-        xyz="7.3589E-05 -4.1141E-06 -0.0075032"
+        xyz="0.011662 0.000244 -0.014364"
         rpy="0 0 0" />
       <mass
-        value="0.38305" />
+        value="0.494" />
       <inertia
-        ixx="0.000202"
-        ixy="0.000000"
-        ixz="-0.000053"
-        iyy="0.000741"
-        iyz="0.000000"
-        izz="0.000785" />
+        ixx="0.000261"
+        ixy="0.0000003"
+        ixz="-0.000115"
+        iyy="0.001170"
+        iyz="-0.0000002"
+        izz="0.001213" />
     </inertial>
     <visual>
       <origin
@@ -1077,7 +987,7 @@
       lower="-0.345"
       upper="0.345"
       effort="20"
-      velocity="18"
+      velocity="18.1"
     />
   </joint>
 
@@ -1088,7 +998,7 @@
         xyz="-0.010065 0.0020086 -0.024739"
         rpy="0 0 0" />
       <mass
-        value="0.6413" />
+        value="0.69" />
       <inertia
         ixx="0.000782"
         ixy="-0.000004"
@@ -1116,7 +1026,7 @@
     name="Right_Hip_Pitch"
     type="revolute">
     <origin
-      xyz="0 -0.096 -0.062"
+      xyz="0 -0.096 -0.077"
       rpy="0 0 0" />
     <parent
       link="Trunk" />
@@ -1127,8 +1037,8 @@
     <limit
       lower="-3.0"
       upper="2.21"
-      effort="45"
-      velocity="18"
+      effort="30"
+      velocity="7.1"
     />
   </joint>
   <link
@@ -1138,7 +1048,7 @@
         xyz="0.023585 0.000049 -0.024996"
         rpy="0 0 0" />
       <mass
-        value="0.127825" />
+        value="0.13" />
       <inertia
         ixx="0.000191"
         ixy="0.000000"
@@ -1185,8 +1095,8 @@
     <limit
       lower="-1.57"
       upper="0.4"
-      effort="30"
-      velocity="18"
+      effort="35"
+      velocity="12.9"
   />
   </joint>
   <link
@@ -1196,7 +1106,7 @@
         xyz="-0.008475 0.0040392 -0.087906"
         rpy="0 0 0" />
       <mass
-        value="1.5592" />
+        value="1.65" />
       <inertia
         ixx="0.015786"
         ixy="-0.000096"
@@ -1243,8 +1153,8 @@
     <limit
       lower="-1."
       upper="1."
-      effort="30"
-      velocity="18"
+      effort="20"
+      velocity="18.1"
     />
   </joint>
   <link
@@ -1254,7 +1164,7 @@
         xyz="-0.000805 -0.003146 -0.109215"
         rpy="0 0 0" />
       <mass
-        value="1.483338" />
+        value="1.50" />
       <inertia
         ixx="0.023681"
         ixy="-0.000035"
@@ -1309,8 +1219,8 @@
     <limit
       lower="0."
       upper="2.23"
-      effort="45"
-      velocity="18"
+      effort="40"
+      velocity="12.5"
     />
   </joint>
   <link
@@ -1320,7 +1230,7 @@
         xyz="0.000000 0.000000 0.000000"
         rpy="0 0 0" />
       <mass
-        value="0.038836" />
+        value="0.039" />
       <inertia
         ixx="0.000002"
         ixy="0.000000"
@@ -1360,24 +1270,24 @@
       lower="-0.87"
       upper="0.345"
       effort="20"
-      velocity="18"
+      velocity="18.1"
     />
   </joint>
   <link
     name="right_foot_link">
     <inertial>
       <origin
-        xyz="-0.000178 -0.000002 -0.007291"
+        xyz="0.011662 -0.000244 -0.014364"
         rpy="0 0 0" />
       <mass
-        value="0.386370" />
+        value="0.494" />
       <inertia
-        ixx="0.000205"
-        ixy="0.000000"
-        ixz="-0.000054"
-        iyy="0.000745"
-        iyz="0.000000"
-        izz="0.000790" />
+        ixx="0.000261"
+        ixy="-0.0000003"
+        ixz="-0.000115"
+        iyy="0.001170"
+        iyz="0.0000002"
+        izz="0.001213" />
     </inertial>
     <visual>
       <origin
@@ -1419,7 +1329,7 @@
       lower="-0.345"
       upper="0.345"
       effort="20"
-      velocity="18"
+      velocity="18.1"
     />
   </joint>
  
