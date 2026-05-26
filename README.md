@@ -20,6 +20,16 @@
 
 ![GMR](./assets/GMR_pipeline.png)
 
+## QUICK START
+
+```bash
+# MuJoCo
+python gmr_pkl_to_npz.py --input k1_v3.pkl --output k1_v3_mj.npz --kick_leg right
+
+# Isaac Sim (ex: booster_train)
+python gmr_pkl_to_npz.py --input k1_v3.pkl --output k1_v3.npz --kick_leg right --body_order isaacsim
+```
+
 #### Key features of GMR:
 - Real-time high-quality retargeting, unlock the potential of real-time whole-body teleoperation, i.e., [TWIST](https://github.com/YanjieZe/TWIST).
 - Carefully tuned for good performance of RL tracking policies.
